@@ -45,22 +45,22 @@
       "./greeting.js": "/Users/hu/Desktop/demo/MiniWebPack/example/greeting.js",
       "./helpers/capitalize.js": "/Users/hu/Desktop/demo/MiniWebPack/example/helpers/capitalize.js"
     },
-    "code": "\"use strict\";\n\nvar _greeting = require(\"./greeting.js\");\nvar _capitalize = require(\"./helpers/capitalize.js\");\n(0, _greeting.greet)();\nconsole.log((0, _capitalize.shout)('it works!'));"
+    "code": "\"use strict\";var _greeting=require(\"./greeting.js\");var _capitalize=require(\"./helpers/capitalize.js\");(0,_greeting.greet)();console.log((0,_capitalize.shout)('it works!'));"
   },
   "/Users/hu/Desktop/demo/MiniWebPack/example/greeting.js": {
     "dependencies": {
       "./name.js": "/Users/hu/Desktop/demo/MiniWebPack/example/name.js",
       "./helpers/capitalize.js": "/Users/hu/Desktop/demo/MiniWebPack/example/helpers/capitalize.js"
     },
-    "code": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.greet = greet;\nvar _name = require(\"./name.js\");\nvar _capitalize = require(\"./helpers/capitalize.js\");\nfunction greet() {\n  console.log(\"Hello, \".concat((0, _capitalize.capitalize)(_name.name), \"!\"));\n}"
+    "code": "\"use strict\";Object.defineProperty(exports,\"__esModule\",{value:true});exports.greet=greet;var _name=require(\"./name.js\");var _capitalize=require(\"./helpers/capitalize.js\");function greet(){console.log(\"Hello, \".concat((0,_capitalize.capitalize)(_name.name),\"!\"));}"
   },
   "/Users/hu/Desktop/demo/MiniWebPack/example/helpers/capitalize.js": {
     "dependencies": {},
-    "code": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.capitalize = capitalize;\nexports.shout = shout;\nfunction capitalize(str) {\n  return str.charAt(0).toUpperCase() + str.slice(1);\n}\nfunction shout(str) {\n  return \"\".concat(str.toUpperCase(), \"!!!\");\n}"
+    "code": "\"use strict\";Object.defineProperty(exports,\"__esModule\",{value:true});exports.capitalize=capitalize;exports.shout=shout;function capitalize(str){return str.charAt(0).toUpperCase()+str.slice(1);}function shout(str){return\"\".concat(str.toUpperCase(),\"!!!\");}"
   },
   "/Users/hu/Desktop/demo/MiniWebPack/example/name.js": {
     "dependencies": {},
-    "code": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.name = void 0;\nvar name = exports.name = 'minipack';"
+    "code": "\"use strict\";Object.defineProperty(exports,\"__esModule\",{value:true});exports.name=void 0;var name=exports.name='minipack';"
   }
 });
   

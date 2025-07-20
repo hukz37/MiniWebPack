@@ -24,7 +24,9 @@ function parseModule(filename) {
   } catch (error) {
     throw new Error(`文件读取失败: ${filename} - ${error.message}`);
   }
-
+  console.log('打印content开始--------',filename)
+  console.log(content);
+  console.log('打印content结束--------',filename)
   // 生成抽象语法树(AST)
   const ast = parser.parse(content, {
     sourceType: "module",
@@ -101,7 +103,7 @@ function makeDependenciesGraph(entry) {
 }
 
 /**
- * 生成可执行的自包含代码
+ * 生成可执行的自执行代码
  * @param {string} entry - 入口文件路径
  * @returns {string} - 可立即执行的打包代码
  */
@@ -163,3 +165,13 @@ module.exports = {
   makeDependenciesGraph,
   generateCode
 };
+
+// 代码执行流程
+// 1. 自执行函数启动
+// 2. 初始化运行时（__webpack_require__, installedModules）
+// 3. 加载入口模块（index.js）
+// 4. 递归加载所有依赖模块（greeting.js, name.js, capitalize.js）
+// 5. 执行模块代码（eval(code)）
+// 6. 导出模块功能（exports）
+// 7. 执行入口模块逻辑（greet(), shout()）
+// 8. 输出最终结果（控制台打印）
