@@ -31,6 +31,7 @@ function parseModule(filename) {
   // console.log(content);
   // console.log('打印content结束--------',filename)
   
+  // 使用工具查看AST代码 https://astexplorer.net/
   // 生成抽象语法树(AST)
   const ast = parser.parse(content, {
     sourceType: "module",
