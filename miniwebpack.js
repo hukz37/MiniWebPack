@@ -24,9 +24,13 @@ function parseModule(filename) {
   } catch (error) {
     throw new Error(`文件读取失败: ${filename} - ${error.message}`);
   }
+
+  // loader逻辑
+
   // console.log('打印content开始--------',filename)
   // console.log(content);
   // console.log('打印content结束--------',filename)
+  
   // 生成抽象语法树(AST)
   const ast = parser.parse(content, {
     sourceType: "module",
